@@ -1,7 +1,7 @@
 <!-- sidebar_view.php -->
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px; height: 100vh; position: fixed; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">
     <div class="text-center mb-4">
-        <h5 class="mt-2">Rental Motor</h5>
+        <h5 class="mt-2">Rental Motor isanGTG</h5>
     </div>
     <hr>
     <ul class="nav flex-column mb-auto">
@@ -16,8 +16,18 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="penyewa_view.php" class="nav-link text-dark">
+            <a href="list_penyewa.php" class="nav-link text-dark">
                 <i class="fas fa-user me-2"></i> Data Penyewa
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="pengembalian.php" class="nav-link text-dark">
+                <i class="fas fa-user me-2"></i> Pengembalian motor
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="data_penyewaan.php" class="nav-link text-dark">
+                <i class="fas fa-user me-2"></i> Laporan Penyewaan
             </a>
         </li>
     </ul>

@@ -61,6 +61,11 @@ if (isset($_POST['Submit'])) {
         .btn-secondary:hover {
             background-color: #0056b3;
         }
+        #previewImage {
+            max-width: 500px; 
+            height: auto; 
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -105,10 +110,16 @@ if (isset($_POST['Submit'])) {
                                     <label class="form-label">CC Motor</label>
                                     <input type="number" name="cc_motor" class="form-control" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Gambar Motor</label>
-                                    <input type="file" name="gambar_motor" class="form-control" accept="image/*" required>
-                                </div>
+                                  <div>
+                                   <div class="mb-3">
+                                        <label for="fileInput" class="form-label text-gray-700">Foto</label>
+                                        <input type="file" name="gambar_motor" id="fileInput" accept="image/*" 
+                                            class="form-control border">
+                                    </div>
+                                        <div id="previewContainer" class="my-3 " >
+                                            <img id="previewImage" class="hidden rounded-lg shadow-md">
+                                        </div>
+                                    </div>
                                 <button type="submit" name="Submit" class="btn btn-secondary w-100">Kirim Data Motor</button>
                             </form>
                         </div>
@@ -123,6 +134,20 @@ if (isset($_POST['Submit'])) {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('fileInput').addEventListener('change', function() {
+        const file = event.target.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('previewImage');
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
 
 </body>
 </html>

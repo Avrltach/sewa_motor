@@ -9,6 +9,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM motor ORDER BY id_motor DESC");
 <head>
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .content {
@@ -32,8 +33,8 @@ $result = mysqli_query($mysqli, "SELECT * FROM motor ORDER BY id_motor DESC");
             <h2 class="text-center">Daftar Motor Iksan</h2>
             <a href="tambah_persediaan.php" class="btn btn-info mb-3">Tambah Persediaan Motor</a>
 
-            <table class="table table-bordered table-striped wide-table">
-                <thead class="table-secondary">
+            <table class="table table-bordered table-striped ">
+                <thead class="table-primary">
                     <tr>
                         <th>Id</th>
                         <th>Nama Motor</th>
@@ -56,8 +57,17 @@ $result = mysqli_query($mysqli, "SELECT * FROM motor ORDER BY id_motor DESC");
                                 <img src="<?= htmlspecialchars($data['gambar_motor']); ?>" alt="Gambar Motor" style="width: 100px; height: auto;">
                             </td>
                             <td>
-                                <a href="edit_persediaan.php?id=<?= $data['id_motor']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="delete_persediaan.php?id=<?= $data['id_motor']; ?>" class="btn btn-danger btn-sm btn-delete" data-id="<?= $data['id_motor']; ?>">Hapus</a>                            </td>
+                                <a href="edit_persediaan.php?id=<?= $data['id_motor'] ?>" 
+                                   class="btn btn-sm btn-warning" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="delete_persediaan.php?id=<?= $data['id_motor'] ?>" 
+                                   class="btn btn-sm btn-danger" 
+                                   onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
+                                   title="Hapus">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
