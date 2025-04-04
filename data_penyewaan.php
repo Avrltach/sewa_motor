@@ -60,7 +60,9 @@ $result = mysqli_query($mysqli, $query);
 <div class="content">
     <div class="container mt-5">
         <h2 class="mb-4">Daftar Pengembalian</h2>
+        
          <a href="pengembalian.php" class="btn mb-3 btn-primary">Input Pengembalian</a>
+
 
         <table class="table table-bordered table-hover ">
             <thead class="table-primary">

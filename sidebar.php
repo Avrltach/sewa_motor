@@ -22,12 +22,12 @@
         </li>
         <li class="nav-item">
             <a href="pengembalian.php" class="nav-link text-dark">
-                <i class="fas fa-user me-2"></i> Pengembalian motor
+                <i class="fas fa-exchange-alt me-2"></i> Pengembalian motor
             </a>
         </li>
         <li class="nav-item">
             <a href="data_penyewaan.php" class="nav-link text-dark">
-                <i class="fas fa-user me-2"></i> Laporan Penyewaan
+                <i class="fas fa-receipt me-2"></i> Laporan Penyewaan
             </a>
         </li>
     </ul>
