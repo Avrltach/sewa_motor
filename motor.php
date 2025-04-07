@@ -57,16 +57,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM motor ORDER BY id_motor DESC");
                                 <img src="<?= htmlspecialchars($data['gambar_motor']); ?>" alt="Gambar Motor" style="width: 100px; height: auto;">
                             </td>
                             <td>
-                                <a href="edit_persediaan.php?id=<?= $data['id_motor'] ?>" 
-                                   class="btn btn-sm btn-warning" title="Edit">
+                                <button class="btn btn-sm btn-warning" onclick="confirmEdit(<?= $data['id_motor'] ?>)" title="Edit">
                                     <i class="bi bi-pencil"></i>
-                                </a>
-                                <a href="delete_persediaan.php?id=<?= $data['id_motor'] ?>" 
-                                   class="btn btn-sm btn-danger" 
-                                   onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"
-                                   title="Hapus">
+                                </button>
+
+                                <button class="btn btn-sm btn-danger" onclick="confirmDelete(<?= $data['id_motor'] ?>)" title="Hapus">
                                     <i class="bi bi-trash"></i>
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     <?php } ?>
@@ -79,6 +76,41 @@ $result = mysqli_query($mysqli, "SELECT * FROM motor ORDER BY id_motor DESC");
 <!-- Tambahkan SweetAlert2 & Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function confirmDelete(id) {
+    Swal.fire({
+        title: 'Yakin ingin menghapus?',
+        text: "Data yang dihapus tidak bisa dikembalikan.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Ya, hapus!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "delete_persediaan.php?id=" + id;
+        }
+    });
+}
+
+function confirmEdit(id) {
+    Swal.fire({
+        title: 'Edit Data',
+        text: "Apakah kamu ingin mengedit data ini?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#0d6efd',
+        cancelButtonColor: '#6c757d',
+        confirmButtonText: 'Ya, edit!',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "edit_persediaan.php?id=" + id;
+        }
+    });
+}
+</script>
 
 
 </body>

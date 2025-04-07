@@ -1,32 +1,32 @@
 <!-- sidebar_view.php -->
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px; height: 100vh; position: fixed; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">
+<div class="d-flex flex-column  text-white flex-shrink-0 p-3 bg-secondary" style="width: 250px; height: 100vh; position: fixed; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">
     <div class="text-center mb-4">
         <h5 class="mt-2">Rental Motor isanGTG</h5>
     </div>
     <hr>
-    <ul class="nav flex-column mb-auto">
+    <ul class="nav flex-column  mb-auto">
         <li class="nav-item">
-            <a href="index.php" class="nav-link text-dark">
+            <a href="index.php" class="nav-link text-white">
                 <i class="fas fa-home me-2"></i> Home
             </a>
         </li>
         <li class="nav-item">
-            <a href="motor.php" class="nav-link text-dark">
+            <a href="motor.php" class="nav-link  text-white">
                 <i class="fas fa-motorcycle me-2"></i> Data Motor
             </a>
         </li>
         <li class="nav-item">
-            <a href="list_penyewa.php" class="nav-link text-dark">
+            <a href="list_penyewa.php" class="nav-link text-white">
                 <i class="fas fa-user me-2"></i> Data Penyewa
             </a>
         </li>
         <li class="nav-item">
-            <a href="pengembalian.php" class="nav-link text-dark">
+            <a href="pengembalian.php" class="nav-link text-white">
                 <i class="fas fa-user me-2"></i> Pengembalian motor
             </a>
         </li>
         <li class="nav-item">
-            <a href="data_penyewaan.php" class="nav-link text-dark">
+            <a href="data_penyewaan.php" class="nav-link text-white">
                 <i class="fas fa-user me-2"></i> Laporan Penyewaan
             </a>
         </li>
@@ -44,12 +44,12 @@
         text-decoration: none;
     }
     .nav-link:hover {
-        background-color: rgba(0, 123, 255, 0.1);
-        color: #007bff;
+        background-color: rgba(50, 52, 54, 0.1);
+        color:rgb(65, 67, 69);
     }
     .nav-link.active {
         font-weight: bold;
-        color: #007bff;
+        color:rgb(57, 60, 64);
     }
 </style>
 
